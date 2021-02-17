@@ -8,8 +8,8 @@
 
 
 <script>
-    /***
-//change front color to red
+    /*** 
+//change front color to red for button 
     document.querySelector('#red').onclick = function() {
         document.querySelector('#hello').style.color = 'red';
     }
@@ -22,8 +22,9 @@
         document.querySelector('#hello').style.color = 'green';
     }
     ***/
-//short hand
-document.addEventListener('DOMContentLoaded', function() {
+//short hand for button 
+
+/***
 
 
 document.querySelectorAll('button').forEach(function(button) {
@@ -32,6 +33,15 @@ document.querySelectorAll('button').forEach(function(button) {
     }
 });
 
+***/
+//short hand for arrow function for button 
+document.addEventListener('DOMContentLoaded', () => {
+
+    document.querySelectorAll('button').forEach( button => {
+        button.onclick = () => {
+            document.querySelector('#hello').style.color = button.dataset.color;
+        }
+    });
 
 });
 
@@ -39,9 +49,20 @@ document.querySelectorAll('button').forEach(function(button) {
 
 <body>
     <h1 id="hello">Hello!</h1>
+    <!----- 'JS lesson type 1'
     <button data-color="red" >Red</button>
     <button data-color="blue">Blue</button>
     <button data-color="green">Green</button>
+    -->
+
+    <select>
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="blue">Green</option>
+
+    </select>
+
 </body>
 </html>
 
